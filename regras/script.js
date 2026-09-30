@@ -47,7 +47,7 @@ const regrasAtuais = [
     { texto: "<strong>Regra 40:</strong> Se um macumbeiro saísse soltando a palavra de Exu pelas ruas, você se incomodaria?", nota: "sim, incomodaria" },
     { texto: "<strong>Regra 41:</strong> Pense antes de escrever" },
     { texto: "<strong>Regra 42:</strong> Todos odeiam conteúdo de IA" },
-    { texto: "<strong>Regra 43:</strong> Algo sempre irá vazar de alguma empresa" }
+    { texto: "<strong>Regra 43:</strong> Algo sempre irá vazar de alguma empresa" },
     { texto: "<strong>Regra 44:</strong> Todos cairão em um Rick roll um dia" }
 ];
 

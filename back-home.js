@@ -5,8 +5,12 @@
     const button = document.createElement('a');
     button.className = 'back-home-button';
     button.href = new URL('index.html', scriptUrl).href;
-    button.textContent = '\u2190 In\u00edcio';
     button.setAttribute('aria-label', 'Voltar para o in\u00edcio do Arquivo V\u00f3rtex');
+
+    const image = document.createElement('img');
+    image.src = 'https://images.steamusercontent.com/ugc/1852682144161831068/57018EE5D3385F6993064080813648E0DEF6014F/';
+    image.alt = '';
+    button.append(image);
 
     const styles = document.createElement('style');
     styles.textContent = `
@@ -15,28 +19,24 @@
             right: 16px;
             bottom: 16px;
             z-index: 10000;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 44px;
-            padding: 0 16px;
-            color: #fff;
-            background: #161d2b;
-            border: 1px solid #7b8ba7;
-            border-radius: 6px;
-            font: 600 14px/1.2 'Segoe UI', sans-serif;
-            text-decoration: none;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-            transition: background-color 0.15s ease, transform 0.15s ease;
+            display: block;
+            width: 44px;
+            height: 44px;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            line-height: 0;
         }
 
-        .back-home-button:hover {
-            background: #29364d;
-            transform: translateY(-2px);
+        .back-home-button img {
+            display: block;
+            width: 44px;
+            height: 44px;
+            object-fit: cover;
         }
 
         .back-home-button:focus-visible {
-            outline: 3px solid #f3ca45;
+            outline: 2px solid #f3ca45;
             outline-offset: 3px;
         }
 

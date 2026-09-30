@@ -39,14 +39,8 @@ body {
 
 .logo-icon {
     font-size: 1.8rem;
-    text-decoration: none;
     color: #f1c40f;
     line-height: 1;
-    transition: 0.2s;
-}
-
-.logo-icon:hover {
-    transform: scale(1.05);
 }
 
 .logo-text {
@@ -55,12 +49,6 @@ body {
     letter-spacing: 1px;
     font-family: 'Courier New', monospace;
     color: #ecf0f1;
-    text-decoration: none;
-    transition: 0.2s;
-}
-
-.logo-text:hover {
-    color: #f1c40f;
 }
 
 .blog-body {

@@ -90,43 +90,34 @@
         </div>
     </main>
 
-    <div id="musicPlayer" class="music-player">
-        <div class="player-container">
-            <div class="player-content">
-                <div class="music-icon">
-                    <img src="./MRD.jpg" alt="Album Art" class="album-art">
-                </div>
-                
-                <button id="playPauseBtn" class="player-btn">
-                    <span class="play-icon">▶</span>
-                   <span class="pause-icon" style="display: none;">❚❚</span>
-                </button>
-                
-                <div class="music-controls">
-                    <div class="track-info">
-                        <span class="track-title">Fire and Flames</span>
-                        <div class="time-display">
-                            <span id="currentTime">0:00</span>
-                            <span class="time-separator">•</span>
-                            <span id="duration">0:00</span>
-                        </div>
-                    </div>
-                    <div class="progress-container">
-                        <input type="range" id="progressBar" class="progress-bar" min="0" max="100" value="0">
+    <div class="music-widget" id="musicWidget">
+        <section id="musicPlayer" class="music-player" aria-label="Player de música" hidden>
+            <div class="player-header">
+                <div class="track-info">
+                    <span class="track-title">Fire and Flames</span>
+                    <div class="time-display">
+                        <span id="currentTime">0:00</span>
+                        <span class="time-separator">•</span>
+                        <span id="duration">0:00</span>
                     </div>
                 </div>
-                
-                <div class="player-buttons">
-                    <button id="restartBtn" class="player-btn">↺</button>
-                    <button id="minimizeBtn" class="player-btn minimize">↓</button>
-                    <button id="closePlayerBtn" class="player-btn close">×</button>
-                </div>
+                <button id="closePlayerBtn" class="player-btn close" type="button" aria-label="Parar e fechar player">×</button>
             </div>
-        </div>
-    </div>
+            <div class="progress-container">
+                <input type="range" id="progressBar" class="progress-bar" min="0" max="100" value="0" aria-label="Progresso da música">
+            </div>
+            <div class="player-actions">
+                <button id="playPauseBtn" class="player-btn main-control" type="button" aria-label="Reproduzir">
+                    <span class="play-icon">▶</span>
+                    <span class="pause-icon" hidden>❚❚</span>
+                </button>
+                <button id="restartBtn" class="player-btn" type="button" aria-label="Reiniciar música">↺</button>
+            </div>
+        </section>
 
-    <div class="minimized-player" style="display: none;">
-        <button id="expandBtn" class="player-btn expand">↑</button>
+        <button id="musicLauncher" class="music-launcher" type="button" aria-label="Abrir player e tocar música" aria-expanded="false" aria-controls="musicPlayer">
+            <img src="./MRD.jpg" alt="" class="album-art">
+        </button>
     </div>
 
     <footer class="footer">

@@ -7,81 +7,89 @@ let isPlaying = false;
 
 function initializeMusicPlayer() {
     audioPlayer = new Audio('./MRD.mp3');
-    
-    audioPlayer.addEventListener('ended', function() {
-        restartMusic();
-    });
-    
+    audioPlayer.loop = true;
+
     audioPlayer.addEventListener('loadedmetadata', function() {
         updateDurationDisplay();
     });
-    
+
     audioPlayer.addEventListener('timeupdate', function() {
         updateProgressBar();
         updateCurrentTimeDisplay();
     });
-    
+
+    audioPlayer.addEventListener('play', function() {
+        setPlayingState(true);
+    });
+
+    audioPlayer.addEventListener('pause', function() {
+        setPlayingState(false);
+    });
+
+    document.getElementById('musicLauncher').addEventListener('click', togglePlayer);
     document.getElementById('playPauseBtn').addEventListener('click', togglePlayPause);
     document.getElementById('restartBtn').addEventListener('click', restartMusic);
     document.getElementById('closePlayerBtn').addEventListener('click', closePlayer);
-    document.getElementById('minimizeBtn').addEventListener('click', minimizePlayer);
-    document.getElementById('expandBtn').addEventListener('click', expandPlayer);
     document.getElementById('progressBar').addEventListener('input', seekAudio);
-    
-    setTimeout(showPlayer, 3000);
 }
 
-function showPlayer() {
-    document.getElementById('musicPlayer').style.display = 'block';
+function togglePlayer() {
+    const player = document.getElementById('musicPlayer');
+    const launcher = document.getElementById('musicLauncher');
+    const widget = document.getElementById('musicWidget');
+    const isOpening = player.hidden;
+
+    if (!isOpening) {
+        closePlayer();
+        return;
+    }
+
+    player.hidden = !isOpening;
+    launcher.setAttribute('aria-expanded', String(isOpening));
+    widget.classList.toggle('is-open', isOpening);
+
+    if (isOpening && audioPlayer.paused) {
+        audioPlayer.play().catch(function() {
+            setPlayingState(false);
+        });
+    }
 }
 
 function togglePlayPause() {
-    const playIcon = document.querySelector('.play-icon');
-    const pauseIcon = document.querySelector('.pause-icon');
-    
-    if (!isPlaying) {
-        audioPlayer.play();
-        playIcon.style.display = 'none';
-        pauseIcon.style.display = 'inline';
-        isPlaying = true;
+    if (audioPlayer.paused) {
+        audioPlayer.play().catch(function() {
+            setPlayingState(false);
+        });
     } else {
         audioPlayer.pause();
-        playIcon.style.display = 'inline';
-        pauseIcon.style.display = 'none';
-        isPlaying = false;
     }
+}
+
+function setPlayingState(playing) {
+    isPlaying = playing;
+    document.getElementById('musicWidget').classList.toggle('is-playing', playing);
+    document.querySelector('.play-icon').hidden = playing;
+    document.querySelector('.pause-icon').hidden = !playing;
+    document.getElementById('playPauseBtn').setAttribute('aria-label', playing ? 'Pausar' : 'Reproduzir');
 }
 
 function restartMusic() {
     audioPlayer.currentTime = 0;
-    if (!isPlaying) {
+    updateCurrentTimeDisplay();
+    updateProgressBar();
+    if (audioPlayer.paused) {
         togglePlayPause();
     }
 }
 
 function closePlayer() {
-    if (isPlaying) {
-        audioPlayer.pause();
-        isPlaying = false;
-        document.querySelector('.play-icon').style.display = 'inline';
-        document.querySelector('.pause-icon').style.display = 'none';
-    }
-    document.getElementById('musicPlayer').style.display = 'none';
-    document.querySelector('.minimized-player').style.display = 'none';
-}
-
-function minimizePlayer() {
-    const player = document.getElementById('musicPlayer');
-    const minimizedPlayer = document.querySelector('.minimized-player');
-    player.classList.add('minimized');
-    minimizedPlayer.style.display = 'flex';
-}
-
-function expandPlayer() {
-    const player = document.getElementById('musicPlayer');
-    const minimizedPlayer = document.querySelector('.minimized-player');
-    player.classList.remove('minimized');
-    minimizedPlayer.style.display = 'none';
+    audioPlayer.pause();
+    audioPlayer.currentTime = 0;
+    updateCurrentTimeDisplay();
+    updateProgressBar();
+    document.getElementById('musicPlayer').hidden = true;
+    document.getElementById('musicLauncher').setAttribute('aria-expanded', 'false');
+    document.getElementById('musicWidget').classList.remove('is-open');
 }
 
 function updateProgressBar() {
