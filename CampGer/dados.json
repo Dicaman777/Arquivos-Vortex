@@ -1,0 +1,72 @@
+{
+  "modalidades": [
+    {
+      "id": "esportes",
+      "nome": "Esportes",
+      "icone": "⚽",
+      "desc": "Futebol, Basquete, F1...",
+      "jogos": [
+        {
+          "id": "futebol",
+          "nome": "Futebol",
+          "icone": "⚽",
+          "clipes": [
+            {
+              "id": "gol_de_bicicleta",
+              "titulo": "Gol de bicicleta",
+              "capa": "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
+              "link": "https://youtu.be/dQw4w9WgXcQ"
+            }
+          ]
+        },
+        {
+          "id": "basquete",
+          "nome": "Basquete",
+          "icone": "🏀",
+          "clipes": [
+            {
+              "id": "enterrada_no_estouro",
+              "titulo": "Enterrada no estouro",
+              "capa": "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
+              "link": "https://youtu.be/dQw4w9WgXcQ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "games",
+      "nome": "Jogos Eletrônicos",
+      "icone": "🎮",
+      "desc": "LoL, Street Fighter, CS...",
+      "jogos": [
+        {
+          "id": "lol",
+          "nome": "League of Legends",
+          "icone": "🏆",
+          "clipes": [
+            {
+              "id": "pentakill_final",
+              "titulo": "Pentakill na final",
+              "capa": "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
+              "link": "https://youtu.be/dQw4w9WgXcQ"
+            }
+          ]
+        },
+        {
+          "id": "streetfighter",
+          "nome": "Street Fighter III: 3rd Strike",
+          "icone": "🥊",
+          "clipes": [
+            {
+              "id": "daigo_vs_justin",
+              "titulo": "EVO MOMENT #37 - O Milagre de Daigo",
+              "capa": "https://img.youtube.com/vi/JzS96auqau0/mqdefault.jpg",
+              "link": "https://youtu.be/JzS96auqau0"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "game": {
+    "title": "Dandara: Trials of Fear Edition",
+    "version": "1.5.24",
+    "size": "498mb",
+    "description": "Dandara is a unique metroidvania platformer set in a surreal, gravity-defying world. You play as Dandara, a brave heroine who must restore balance to a oppressed world by battling enemies and exploring a non-linear dreamlike world with innovative movement mechanics.",
+    "specifications": {
+      "architecture": "64-bit",
+      "ts": "✅ Supported",
+      "gamepad": "✅ Supported",
+      "keyboard": "✅ Supported",
+      "fullscreen": "✅ Supported",
+      "playtime": "20~38 Hours",
+      "releaseDate": "February/6/2018",
+      "languages": "English, Español, Português, Français, Deutsch, Русский, 中文",
+      "gameType": "Metroidvania, Platformer, Adventure, Action, <br>Indie, 2D"
+    },
+    "banner": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhTeGjQlN_Lbxqn7Oinf4jckfmkK4T8LXQFuZBTHaGjj6gGoL66jGXnWy-&s=10",
+    "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuMTQamfaAyK2x9Xb56Vf8lJq1hOqeHtkPiGlcsTvV5Q&s",    
+    "screenshots": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz8Uzbik9MizkL-VI_zG9GYZZy4iaATp4_8VcUWGgtqw&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdrxs_l1n9qx1F4u60t_kCgn9ui6vB-Dr_b9KmaAyQ3A&s=10"
+   ]
+  },
+  "achievements": [
+    {
+    "id": 1,
+      "name": "Trophies Coming Soon",
+      "description": "Trophies for this game will be added in the future",
+      "image": "1.jpg"
+    }
+  ]
+}

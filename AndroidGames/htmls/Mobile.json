@@ -1,0 +1,163 @@
+[
+  {
+    "nome": "Limbo",
+    "tamanho": "95mb",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIcnOprIe6jvlFcoFM3bZobGaYokcf8LSGs0e9yX96zw&s=10",
+    "extra": "1.21",
+    "link": "../jogos/Limb/Limb.html"
+  },
+  {
+    "nome": "Pascal Wager",
+    "tamanho": "3,38gb",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA4tBmOwmNvo4syITKztb2cNBL1YKjC98VKy6bgK35Cg&s=10",
+    "extra": "1.6.8",
+    "link": "../jogos/PW/PW.html"
+  },
+  {
+    "nome": "Dead Cells",
+    "tamanho": "1,80gb",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmYTKB8I24LRsPSKhUnKUqIWL3ON5KhY-cfY71KGsZYokV4oN2YvcS7UY&s=10",
+    "extra": "3.5.9",
+    "link": "../jogos/Dece/Dece.html"
+  },
+  {
+    "nome": "Dont Starve PE",
+    "tamanho": "475mb",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIT5Xx_C1pcJ_E-x_RLRBKHestPiaw7r_C4zdjRGU_Ay0FdI6mt86qU7w&s=10",
+    "extra": "1.19.20",
+    "link": "../jogos/DNSP/DNSP.html"
+  },
+  {
+    "nome": "Forager",
+    "tamanho": "129mb",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGp6oZH9c5I9ABhNbM2OC-nRdd4GONkstdzOKxhNi3qw&s=10",
+    "extra": "1.0.13",
+    "link": "../jogos/For/For.html"
+  },
+  {
+    "nome": "Human Fall Flat",
+    "tamanho": "726mb",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-6OerGJ6NzvzDo0kmlQsIYt2HqiX1ueDmRg&s",
+    "extra": "2.5.1",
+    "link": "../jogos/HFF/HFF.html"
+  },
+  {
+    "nome": "Doom",
+    "tamanho": "386mb",
+    "imagem": "https://cdn2.steamgriddb.com/icon_thumb/ee2689a415fc2b28bb05fb5e195ebf04.png",
+    "extra": "1.0.12",
+    "link": "../jogos/Doom/Doom.html"
+  },
+  {
+    "nome": "Geometry Dash",
+    "tamanho": "153mb",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5k5ObQsWahqq4vVnqr58hIc5ht5qmn-mjoL98ilgZKA&s=10",
+    "extra": "2.2.143",
+    "link": "../jogos/GD/GD.html"
+  },
+  {
+    "nome": "Minecraft",
+    "tamanho": "420mb",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuXsE4j6btZlJPJ3UI5huD8Z308dBmE8Uif1oziFFpgLQIGaYkIgiJBiPa&s=10",
+    "extra": "1.21.124.2",
+    "link": "https://mcpedl.org/getfile/6517"
+  },
+  {
+    "nome": "Getting over it",
+    "tamanho": "144mb",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIX7itEgpLpq8siTwFzavUcsVwe3ItZhUOWSsXUBXm523inuB1mFbYo8M&s=10",
+    "extra": "1.9.12",
+    "link": "../jogos/GOI/GOI.html"
+  },
+  {
+    "nome": "Balatro",
+    "tamanho": "65mb+",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToEU9ZwvbH-qp6wuXzQamkuoE8rR_9jwrNA_A8Rabb-g&s=10",
+    "extra": "0.7",
+    "link": "../jogos/Bal/Bal.html"
+  },
+  {
+    "nome": "Assassin's Creed Pirates",
+    "tamanho": "807mb",
+    "imagem": "https://upload.wikimedia.org/wikipedia/fr/a/a1/Assassin%27s_Creed_Pirates_Logo.png",
+    "extra": "2.9.1",
+    "link": "../jogos/ACP/ACP.html"
+  },
+  {
+    "nome": "Bendy and the In Machine",
+    "tamanho": "1,08gb",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZOuJVHDnTRSyeUDHTr_yQkXYc2QnzCXE6MMH8hKEGNw&s=10",
+    "extra": "1.0.906",
+    "link": "../jogos/BETIM/BETIM.html"
+  },
+  {
+    "nome": "Dandara",
+    "tamanho": "1,03gb",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuMTQamfaAyK2x9Xb56Vf8lJq1hOqeHtkPiGlcsTvV5Q&s",
+    "extra": "1.5.24",
+    "link": "../jogos/Ddd/Ddd.html"
+  },
+  {
+    "nome": "Adventure Time Card Wars",
+    "tamanho": "200mb",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqxdW0dS8q20wNC9M8NKmOUJdS40lznj_adw&s",
+    "extra": "1.15.0",
+    "link": "../jogos/ATCW/ATCard.html"
+  },
+  {
+    "nome": "Fran Bow",
+    "tamanho": "505mb",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVoSr6vbCw7YD9Vs7JnEmRLAHwI1coxb1z64uSBWUEdN1ao3LhZs9ixXYi&s=10",
+    "extra": "1.0.3",
+    "link": "../jogos/FB/FB.html"
+  },
+  {
+    "nome": "Blasphemous",
+    "tamanho": "361mb",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvK92HBcwK8iXCSWxluuEVkOxoZE2x9RIAhjjYFNB4fQ&s",
+    "extra": "1.9.0",
+    "link": "../jogos/Blasph/Blasph.html"
+  },
+  {
+    "nome": "Incredibox",
+    "tamanho": "141mb",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUucTqBfry4ZuFiR8AX3alnvZQXMoUwNSzdf3eY-QmHQ&s=10",
+    "extra": "0.9.9",
+    "link": "../jogos/Inc/Inc.html"
+  },
+  {
+    "nome": "Stardew Valley",
+    "tamanho": "377mb",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOCP7CFzLkEi4hzhx37bU7TtjMmW2QS1K4-4iZKVVpxg&s=10",
+    "extra": "1.6.15",
+    "link": "../jogos/SV/SV.html"
+  },
+  {
+    "nome": "Terraria",
+    "tamanho": "149mb",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWSLkVMyzhPQ6SM2vOxA3KYxNVAWedoI4_GA&s",
+    "extra": "1.4.4.9",
+    "link": "../jogos/Terraria/terindex.html"
+  },
+  {
+    "nome": "Very Little Nightmares",
+    "tamanho": "452mb",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2EkvOZSM6Fc0la2A42dP3Y0xTYOBaNbz3MA&s",
+    "extra": "1.2.6",
+    "link": "../jogos/VLN/VLN.html"
+  },
+  {
+    "nome": "Assassin's Creed Unity Companion",
+    "tamanho": "475mb",
+    "imagem": "https://sc.filehippo.net/images/t_app-icon-l/p/538bb0ce-9b32-11e6-aea5-00163ec9f5fa/139816348/assassins-creed-unity-companion-logo",
+    "extra": "1.0.5",
+    "link": "../jogos/ACU/ACU.html"
+  },
+  {
+    "nome": "Zueirama",
+    "tamanho": "151mb",
+    "imagem": "https://img.tapimg.net/market/images/41b53c234fecd8d6d539e723a8113053.png",
+    "extra": "0.0.0.17",
+    "link": "../jogos/Zueir/Zueir.html"
+  }
+]

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principais Sites</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body> 
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <img src="https://64.media.tumblr.com/9d15f891909d6506e9f25b02631d90c3/84110e4ac0a04e92-67/s640x960/3c052d45e94a654da9ac26ab338eb0883881a56a.gif" alt="DM7Web Android Games Hub" loading="eager">
+        
+        <div class="hero-content">
+            <div class="logo">
+                <span class="logo-text">Lista de sites com</span>
+            </div>
+            <h1>Android Games</h1>
+            <p class="hero-subtitle">Principais Confiáveis</p>
+        </div>
+    </header>
+
+    <main class="hub-section">
+        <div class="hub-grid">
+            <div class="hub-card">
+                <div class="card-content">
+                    <a href="Android/Dm7Android.html" class="card-main-link">
+                        <div class="card-main">
+                            <img src="https://cdn-icons-png.flaticon.com/512/174/174836.png" alt="Android Games" loading="eager">
+                            <div class="card-text">
+                                <p class="title">Android Games & APKs</p>
+                                <p class="description">Access various Android Games</p>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="card-subcategories">
+                        <a href="htmls/Mobile.html" class="sub-item">
+                            <span class="sub-title">Mobile Games</span>
+                        </a>
+                        <a href="htmls/port.html" class="sub-item">
+                            <span class="sub-title">Android Ports</span>
+                        </a>
+                        <a href="htmls/gameloft.html" class="sub-item">
+                            <span class="sub-title">Gameloft Games</span>
+                        </a>
+                        <a href="htmls/webgames.html" class="sub-item">
+                            <span class="sub-title">Web Games</span>
+                        </a>
+                        <a href="M/memorial.html" class="sub-item">
+                            <span class="sub-title">Game Memorial</span>
+                        </a>
+                        <a href="undertale/unindex.html" class="sub-item">
+                            <span class="sub-title">Undertale Fan Games</span>
+                        </a>
+                        <a href="DDLC/ddlc.html" class="sub-item">
+                            <span class="sub-title">DDLC Fan Games</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hub-card">
+                <div class="card-content">
+                    <a href="#" class="card-main-link">
+                        <div class="card-main">
+                            <img src="https://media1.tenor.com/m/6I1KlvR8xP4AAAAd/mystery-anime.gif" alt="Coming Soon" loading="eager">
+                            <div class="card-text">
+                                <p class="title">More Content Soon</p>
+                                <p class="description">New categories coming</p>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="card-subcategories">
+                        <a href="#" class="sub-item">
+                            <span class="sub-title">Android Apps</span>
+                        </a>
+                        <a href="#" class="sub-item">
+                            <span class="sub-title">Game Music</span>
+                        </a>
+                        <a href="#" class="sub-item">
+                            <span class="sub-title">Game Media</span>
+                        </a>
+                        <a href="#" class="sub-item">
+                            <span class="sub-title">Game Updates</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="musicPlayer" class="music-player">
+        <div class="player-container">
+            <div class="player-content">
+                <div class="music-icon">
+                    <img src="./MRD.jpg" alt="Album Art" class="album-art">
+                </div>
+                
+                <button id="playPauseBtn" class="player-btn">
+                    <span class="play-icon">▶</span>
+                   <span class="pause-icon" style="display: none;">❚❚</span>
+                </button>
+                
+                <div class="music-controls">
+                    <div class="track-info">
+                        <span class="track-title">Fire and Flames</span>
+                        <div class="time-display">
+                            <span id="currentTime">0:00</span>
+                            <span class="time-separator">•</span>
+                            <span id="duration">0:00</span>
+                        </div>
+                    </div>
+                    <div class="progress-container">
+                        <input type="range" id="progressBar" class="progress-bar" min="0" max="100" value="0">
+                    </div>
+                </div>
+                
+                <div class="player-buttons">
+                    <button id="restartBtn" class="player-btn">↺</button>
+                    <button id="minimizeBtn" class="player-btn minimize">↓</button>
+                    <button id="closePlayerBtn" class="player-btn close">×</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="minimized-player" style="display: none;">
+        <button id="expandBtn" class="player-btn expand">↑</button>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+        </div>
+    </footer>
+
+    <script src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player · Arquivo Vórtex</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .player-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            background: #000;
+        }
+        .player-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .meta-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.5rem;
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        .meta-header span {
+            display: inline-block;
+        }
+        .meta-header .data {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        .meta-header .jogo {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        .meta-header .evento {
+            font-style: italic;
+        }
+        .titulo-clipe {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+            letter-spacing: -0.3px;
+        }
+        .secao {
+            margin-top: 1.5rem;
+        }
+        .secao h2 {
+            font-size: 1rem;
+            color: #2c3e50;
+            border-bottom: 2px solid #e67e22;
+            padding-bottom: 0.3rem;
+            margin-bottom: 0.8rem;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+        .secao p {
+            margin-bottom: 0.6rem;
+            color: #333;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+        .secao .detalhes {
+            background: #f8f5f0;
+            padding: 0.8rem 1.2rem;
+            border-radius: 6px;
+            border-left: 3px solid #e67e22;
+            margin-bottom: 1rem;
+            white-space: pre-line;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+        .secao .detalhes strong {
+            color: #2c3e50;
+        }
+        .secao .curiosidade {
+            background: #fefcf8;
+            padding: 0.8rem 1.2rem;
+            border-radius: 6px;
+            border: 1px dashed #ccc;
+            font-style: italic;
+            color: #555;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+        .erro {
+            color: #c0392b;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .erro a {
+            color: #e67e22;
+            text-decoration: none;
+        }
+        .erro a:hover {
+            text-decoration: underline;
+        }
+        .blog-sidebar .sidebar-clipe a {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .descricao-clipe {
+            font-size: 0.85rem;
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        @media (max-width: 600px) {
+            .titulo-clipe {
+                font-size: 1.2rem;
+            }
+            .meta-header {
+                flex-direction: column;
+                gap: 0.2rem;
+                font-size: 0.75rem;
+            }
+            .secao p,
+            .secao .detalhes,
+            .secao .curiosidade,
+            .descricao-clipe {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-container">
+        <header class="blog-header">
+            <div class="logo-area">
+                <a href="../" class="logo-icon">🏛️</a>
+                <a href="../" class="logo-text">Arquivo Vórtex</a>
+            </div>
+        </header>
+
+        <div class="blog-body">
+            <aside class="blog-sidebar">
+                <h3>🎬 Clipes em Destaque</h3>
+                <div id="sidebar-clipes">
+                    <p style="font-size:0.8rem;color:#7f8c8d;">Carregando...</p>
+                </div>
+                <hr>
+            </aside>
+
+            <main class="blog-main">
+                <div id="caminho" class="breadcrumb">
+                    <span class="link" onclick="window.location.href='index.html'">← Voltar</span>
+                    <span class="sep">—</span>
+                    <span class="atual">Player</span>
+                </div>
+                <div id="player-content">
+                    <p style="color:#7f8c8d; text-align:center; padding:2rem 0;">Carregando clipe...</p>
+                </div>
+            </main>
+        </div>
+
+        <footer class="blog-footer">
+            <p>Arquivo Vórtex · Preservação digital · 2026</p>
+        </footer>
+    </div>
+
+    <script>
+        // ===== SIDEBAR =====
+        function atualizarSidebarPlayer() {
+            const sidebar = document.getElementById('sidebar-clipes');
+            
+            fetch('dados.json')
+                .then(res => {
+                    if (!res.ok) throw new Error('dados.json não encontrado');
+                    return res.json();
+                })
+                .then(dados => {
+                    let todosClipes = [];
+                    dados.modalidades.forEach(m => {
+                        m.jogos.forEach(j => {
+                            j.clipes.forEach(c => {
+                                todosClipes.push({
+                                    titulo: c.titulo,
+                                    link: c.link,
+                                    id: c.id || c.titulo.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '')
+                                });
+                            });
+                        });
+                    });
+
+                    const clipesAleatorios = todosClipes
+                        .sort(() => Math.random() - 0.5)
+                        .slice(0, 30);
+
+                    let html = '';
+                    clipesAleatorios.forEach(clipe => {
+                        html += `
+                            <div class="sidebar-clipe">
+                                <a href="player.html?id=${clipe.id}">${clipe.titulo}</a>
+                            </div>
+                        `;
+                    });
+
+                    if (clipesAleatorios.length === 0) {
+                        html = '<p style="font-size:0.8rem;color:#7f8c8d;">Nenhum clipe disponível.</p>';
+                    }
+
+                    sidebar.innerHTML = html;
+                })
+                .catch(err => {
+                    sidebar.innerHTML = '<p style="font-size:0.8rem;color:#c0392b;">Erro ao carregar clipes.</p>';
+                });
+        }
+
+        // ===== PLAYER =====
+        const urlParams = new URLSearchParams(window.location.search);
+        const clipeId = urlParams.get('id');
+
+        if (!clipeId) {
+            document.getElementById('player-content').innerHTML = `
+                <div class="erro">
+                    <p>❌ Nenhum clipe especificado.</p>
+                    <a href="index.html">← Voltar</a>
+                </div>
+            `;
+        } else {
+            fetch(`clipes/${clipeId}.json`)
+                .then(res => {
+                    if (!res.ok) throw new Error(`Arquivo "${clipeId}.json" não encontrado`);
+                    return res.json();
+                })
+                .then(data => {
+                    renderizarPlayer(data);
+                })
+                .catch(err => {
+                    document.getElementById('player-content').innerHTML = `
+                        <div class="erro">
+                            <p>❌ Erro ao carregar clipe: ${err.message}</p>
+                            <p style="font-size:0.85rem;color:#7f8c8d;">Verifique se o arquivo <strong>clipes/${clipeId}.json</strong> existe.</p>
+                            <a href="index.html">← Voltar</a>
+                        </div>
+                    `;
+                });
+        }
+
+        function renderizarPlayer(data) {
+            const container = document.getElementById('player-content');
+
+            let videoId = '';
+            if (data.link) {
+                if (data.link.includes('youtu.be/')) {
+                    videoId = data.link.split('youtu.be/')[1]?.split('?')[0] || '';
+                } else if (data.link.includes('watch?v=')) {
+                    videoId = data.link.split('v=')[1]?.split('&')[0] || '';
+                } else if (data.link.includes('youtube.com/embed/')) {
+                    videoId = data.link.split('embed/')[1]?.split('?')[0] || '';
+                }
+            }
+
+            if (!videoId && data.link) {
+                const match = data.link.match(/(?:v=|youtu\.be\/|embed\/)([a-zA-Z0-9_-]{11})/);
+                if (match) videoId = match[1];
+            }
+
+            // Atualizar breadcrumb
+            const caminho = document.getElementById('caminho');
+            caminho.innerHTML = `
+                <span class="link" onclick="window.location.href='index.html'">← Voltar</span>
+                <span class="sep">—</span>
+                <span class="atual">${data.titulo || 'Player'}</span>
+            `;
+
+            // Permissions policy: allow all features needed pelo YouTube
+            const allowAttrs = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+
+            const html = `
+                <div class="player-wrapper">
+                    ${videoId ? `
+                        <iframe 
+                            src="https://www.youtube.com/embed/${videoId}" 
+                            allow="${allowAttrs}"
+                            allowfullscreen 
+                            loading="lazy">
+                        </iframe>
+                    ` : `
+                        <div style="display:flex;align-items:center;justify-content:center;height:100%;color:#7f8c8d;background:#1a1a2e;">
+                            <p>▶️ Link do vídeo indisponível<br><span style="font-size:0.8rem;">${data.link || 'Sem link'}</span></p>
+                        </div>
+                    `}
+                </div>
+
+                <div class="meta-header">
+                    ${data.data ? `<span class="data">📅 ${data.data}</span>` : ''}
+                    ${data.jogo ? `<span class="jogo">🎮 ${data.jogo}</span>` : ''}
+                    ${data.evento ? `<span class="evento">🏟️ ${data.evento}</span>` : ''}
+                </div>
+
+                <div class="titulo-clipe">${data.titulo || 'Sem título'}</div>
+
+                ${data.descricao ? `<div class="descricao-clipe">${data.descricao}</div>` : ''}
+
+                <div class="secao">
+                    <h2>📅 OS FATOS</h2>
+                    ${data.fatos ? `
+                        <div class="detalhes">
+                            ${data.fatos}
+                        </div>
+                    ` : ''}
+
+                    ${data.explicacao ? `
+                        <p><strong>Explicação da cena:</strong></p>
+                        <p style="white-space:pre-line;font-size:0.85rem;line-height:1.6;">${data.explicacao}</p>
+                    ` : ''}
+
+                    ${data.contexto ? `
+                        <p><strong>Contexto Geral:</strong></p>
+                        <p style="white-space:pre-line;font-size:0.85rem;line-height:1.6;">${data.contexto}</p>
+                    ` : ''}
+
+                    ${data.curiosidade ? `
+                        <div class="curiosidade">
+                            💡 ${data.curiosidade}
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+
+            container.innerHTML = html;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            atualizarSidebarPlayer();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquivo Vórtex · O Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonte Mojangles (Minecraft) -->
+    <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+</head>
+<body>
+    <div class="vortex-bg"></div>
+
+    <!-- ===== TEXTO AMARELO ESTILO MINECRAFT (FIXO E MAIS PRA DIREITA) ===== -->
+    <div class="minecraft-tip" id="minecraftTip">
+        <span id="tipText">Carregando...</span>
+    </div>
+
+    <div class="container">
+        <!-- resto do conteúdo igual -->
+        <header>
+            <div class="logo">⏣ Arquivo Vórtex</div>
+            <div class="logo-sub">Toda internet em um só lugar</div>
+            <div class="tagline">↳ <span>Resenhando</span> Jogos, Lost Médias e tudo de bom da net</div>
+        </header>
+
+        <div class="grid">
+            <a href="AndroidGames/" class="card card-games">
+                <span class="card-icon">🎮</span>
+                <h2>Android Apks</h2>
+                <p>Site Principal / Melhores sites para jogos Android (apk)</p>
+                <span class="card-badge">↳ em análise</span>
+            </a>
+            <a href="sites-uteis/" class="card card-sites">
+                <span class="card-icon">🌐</span>
+                <h2>Sites Úteis</h2>
+                <p>Ferramentas, bancos de dados e arquivos da web que todo pesquisador digital precisa.</p>
+                <span class="card-badge">↳ coleção</span>
+            </a>
+            <a href="lost-medias/" class="card card-media">
+                <span class="card-icon">📼</span>
+                <h2>Lost Mídias</h2>
+                <p>Filmes, comerciais, músicas e games que se perderam no tempo. O arquivo do quase-esquecido.</p>
+                <span class="card-badge">↳ em curadoria</span>
+            </a>
+            <a href="regras/" class="card card-rules">
+                <span class="card-icon">⚖️</span>
+                <h2>Regras da Net</h2>
+                <p>Leis não-escritas, memes históricos e códigos de conduta que moldaram a cultura digital.</p>
+                <span class="card-badge">↳ enciclopédia</span>
+            </a>
+            <a href="CampGer/Index.html" class="card card-moments">
+                <span class="card-icon">🏆</span>
+                <h2>Melhores Momentos</h2>
+                <p>Reveja os lances mais épicos de campeonatos de futebol, jogos eletrônicos e muito mais.</p>
+                <span class="card-badge">↳ clipes</span>
+            </a>
+        </div>
+
+        <section class="donation-section" id="doacao">
+            <h2>☕ Apoie o Arquivo Vórtex</h2>
+            <p class="donation-text">Este site é <strong>100% sem fins lucrativos</strong> — é um projeto de curadoria e preservação digital, mantido com muito café e madrugadas. Se você gosta do conteúdo e quer ajudar a nós animar a manter esse projeto de pé (e o criador de pé), qualquer doação irá fazer o criador resenha bastante de felicidade ✍️🔥</p>
+            <div class="pix-area">
+                <label for="pix-key">📌 Chave Pix (copie e cole):</label>
+                <div class="pix-box">
+                    <input type="text" id="pix-key" value="maqlwjeoqqo@hotmail.com" readonly>
+                    <button class="btn-copy" onclick="navigator.clipboard?.writeText(document.getElementById('pix-key').value)">📋 Copiar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>❓ Perguntas Frequentes</h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>O que é o Arquivo Vórtex?</summary>
+                    <div class="faq-answer"><p>É um portal que planeja juntar a cultura geral da internet em um só lugar: jogos removidos da Play Store, sites úteis, mídias perdidas, "regras da internet" que não têm um consenso fixo. Tudo em um só lugar, com curadoria humana.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>Vocês hospedam os APKs dos jogos?</summary>
+                    <div class="faq-answer"><p><strong>Não.</strong> Este site apenas fornece informações e links para fontes confiáveis (como APKMirror e Internet Archive). Não armazenamos nenhum arquivo APK em nossos servidores (J7prime 2RAM).</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>As mídias como jogos removidos da Play Store e Lost Mídias são ilegais?</summary>
+                    <div class="faq-answer"><p>A distribuição não autorizada de APKs pode violar direitos autorais, mesmo que o jogo tenha sido removido da loja. Por isso, <strong>não oferecemos downloads diretos</strong> — apenas curadoria e links para arquivos já disponibilizados por terceiros, como sites de APK, Internet Archive, Wikipedia etc.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>Como posso contribuir com o projeto?</summary>
+                    <div class="faq-answer"><p>Além da doação via Pix (acima), você pode sugerir novos conteúdos, reportar links quebrados ou compartilhar o site, pois ele não está anexado a nenhum site de busca.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>O site tem fins lucrativos?</summary>
+                    <div class="faq-answer"><p><strong>Não.</strong> Este é um projeto hobby, sem anúncios ou monetização. As doações são voluntárias e ajudam apenas o criador a ter alguma mixaria para comer.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>O site não é anexado por quê?</summary>
+                    <div class="faq-answer"><p>Como o site documenta acontecimentos e o geral da internet, queremos ao máximo possível não levar processo por nada e não pagar por uma hospedagem de 100 conto. Porém, se as doações chegarem a 70 por mês, com certeza anexaremos o site ao Google!</p></div>
+                </details>
+            </div>
+        </section>
+ <div class="github-updates">
+            <button class="github-btn" onclick="window.open('https://github.com/dm7web/dm7web-updates', '_blank')">
+                View Updates on GitHub
+            </button>
+        </div>
+        <div class="disclaimer-box">
+            <span class="emoji">⚡</span>
+            <div><strong>Isenção de responsabilidade:</strong> Este site não hospeda arquivos APK diretamente. Todo o conteúdo é apenas <strong>curadoria informativa</strong> com links para fontes oficiais ou acervos arquivados (Internet Archive). Caso seja titular de direitos autorais e queira solicitar a remoção de algum link, entre em contato.</div>
+        </div>
+        <strong>Contato: ezequiaswork@outlook.com</strong>
+
+        <footer>
+            <p>🧩 <a href="https://github.com/seu-usuario/arquivo-vortex" target="_blank">Arquivo Vórtex</a> · Hospedado no GitHub Pages · 2026</p>
+            <p style="margin-top: 6px; font-size: 0.7rem; color: #3a4258;">feito com 💾 e café preto</p>
+        </footer>
+    </div>
+
+    <script>
+        async function carregarTextoMinecraft() {
+            try {
+                const response = await fetch('textos.json');
+                if (!response.ok) throw new Error('textos.json não encontrado');
+                const textos = await response.json();
+
+                const item = textos[Math.floor(Math.random() * textos.length)];
+                const tipText = document.getElementById('tipText');
+
+                if (item.link) {
+                    const isExternal = item.link.startsWith('http://') || item.link.startsWith('https://');
+                    if (isExternal) {
+                        tipText.innerHTML = `<a href="${item.link}" target="_blank">${item.texto}</a>`;
+                    } else {
+                        tipText.innerHTML = `<a href="${item.link}">${item.texto}</a>`;
+                    }
+                } else {
+                    tipText.textContent = item.texto;
+                }
+            } catch (err) {
+                document.getElementById('tipText').textContent = '📌 Arquivo Vórtex — Preservando a cultura digital.';
+                console.warn('Erro ao carregar textos.json:', err);
+            }
+        }
+
+        let intervaloTip = null;
+
+        function iniciarRotacaoTextos() {
+            carregarTextoMinecraft();
+            intervaloTip = setInterval(carregarTextoMinecraft, 15000);
+        }
+
+        document.addEventListener('DOMContentLoaded', iniciarRotacaoTextos);
+    </script>
+</body>
+</html>
