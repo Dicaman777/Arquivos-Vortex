@@ -5,16 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arquivo Vórtex · O Portal</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Fonte Mojangles (Minecraft) -->
-    <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
 </head>
 <body>
     <div class="vortex-bg"></div>
-
-    <!-- ===== TEXTO AMARELO ESTILO MINECRAFT (FIXO E MAIS PRA DIREITA) ===== -->
-    <div class="minecraft-tip" id="minecraftTip">
-        <span id="tipText">Carregando...</span>
-    </div>
 
     <div class="container">
         <!-- resto do conteúdo igual -->
@@ -115,40 +108,5 @@
         </footer>
     </div>
 
-    <script>
-        async function carregarTextoMinecraft() {
-            try {
-                const response = await fetch('textos.json');
-                if (!response.ok) throw new Error('textos.json não encontrado');
-                const textos = await response.json();
-
-                const item = textos[Math.floor(Math.random() * textos.length)];
-                const tipText = document.getElementById('tipText');
-
-                if (item.link) {
-                    const isExternal = item.link.startsWith('http://') || item.link.startsWith('https://');
-                    if (isExternal) {
-                        tipText.innerHTML = `<a href="${item.link}" target="_blank">${item.texto}</a>`;
-                    } else {
-                        tipText.innerHTML = `<a href="${item.link}">${item.texto}</a>`;
-                    }
-                } else {
-                    tipText.textContent = item.texto;
-                }
-            } catch (err) {
-                document.getElementById('tipText').textContent = '📌 Arquivo Vórtex — Preservando a cultura digital.';
-                console.warn('Erro ao carregar textos.json:', err);
-            }
-        }
-
-        let intervaloTip = null;
-
-        function iniciarRotacaoTextos() {
-            carregarTextoMinecraft();
-            intervaloTip = setInterval(carregarTextoMinecraft, 15000);
-        }
-
-        document.addEventListener('DOMContentLoaded', iniciarRotacaoTextos);
-    </script>
 </body>
 </html>
